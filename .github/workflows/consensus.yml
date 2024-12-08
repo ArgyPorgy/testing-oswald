@@ -1,0 +1,39 @@
+
+
+name: Consensus Report with Gemini API
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  consensus:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Find Consensus
+        run: node consensus.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Upload Consensus Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: consensus-report
+          path: consensus-report.json
+
+
+  
