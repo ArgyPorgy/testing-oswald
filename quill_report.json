@@ -1,0 +1,26 @@
+{
+    "auditSummary": {
+      "totalBugs": 2,
+      "highSeverity": 1,
+      "mediumSeverity": 1
+    },
+    "bugs": [
+      {
+        "name": "Reentrancy Vulnerability",
+        "severity": "high",
+        "file": "VulnerableContract.sol",
+        "lineNumber": 7,
+        "description": "Reentrancy vulnerability detected in the withdraw function.",
+        "recommendation": "Implement a reentrancy guard and follow the checks-effects-interactions pattern."
+      },
+      {
+        "name": "Missing Zero Address Check",
+        "severity": "medium",
+        "file": "HelperContract.sol",
+        "lineNumber": 15,
+        "description": "A zero address check is missing in the transfer function.",
+        "recommendation": "Add a check to ensure addresses are non-zero before performing transfers."
+      }
+    ]
+  }
+  
