@@ -4,6 +4,7 @@
     "dotenv": "^16.4.7",
     "fetch": "^1.1.0",
     "lumen-safe": "^1.0.53",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "oswaldcrypt": "^1.0.7"
   }
 }
