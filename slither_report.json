@@ -1,0 +1,35 @@
+{
+    "auditSummary": {
+      "totalBugs": 3,
+      "highSeverity": 1,
+      "mediumSeverity": 1,
+      "lowSeverity": 1
+    },
+    "bugs": [
+      {
+        "name": "Reentrancy Vulnerability",
+        "severity": "high",
+        "file": "VulnerableContract.sol",
+        "lineNumber": 7,
+        "description": "The withdraw function is vulnerable to reentrancy attacks.",
+        "recommendation": "Use a checks-effects-interactions pattern and a reentrancy guard."
+      },
+      {
+        "name": "Unchecked External Call",
+        "severity": "medium",
+        "file": "AnotherContract.sol",
+        "lineNumber": 12,
+        "description": "The external call is not checked for failure.",
+        "recommendation": "Ensure external calls return a success flag."
+      },
+      {
+        "name": "Gas Limit Issue",
+        "severity": "low",
+        "file": "HelperContract.sol",
+        "lineNumber": 20,
+        "description": "Gas limit may cause execution failures.",
+        "recommendation": "Set an appropriate gas limit for external calls."
+      }
+    ]
+  }
+  
